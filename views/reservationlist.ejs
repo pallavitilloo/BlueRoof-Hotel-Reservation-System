@@ -1,0 +1,13 @@
+<%- include('_header') %>
+
+    <ul>
+      <%
+        var list = '';
+        for (i = 0; i < itemlist.length; i++) {
+          list += '<li><a href="mailto:' + itemlist[i].Email + '">' + itemlist[i].FirstName + '</a></li>';
+        }
+      %>
+      <%- list %>
+    </ul>
+
+<%- include('_footer') %>

@@ -1,0 +1,106 @@
+<%- include('_header') %>
+
+    <!-- <form id="formMakeReservation" name="makereservation" method="post" action="/makereservation">
+      <input id="inputFirstName" type="text" placeholder="firstname" name="firstname" />
+      <input id="inputLastName" type="text" placeholder="lastname" name="lastname" />
+      <input id="inputEmail" type="text" placeholder="email" name="email" />      
+      <input id="inputFromDate" type="text" placeholder="fromdate" name="fromdate" />
+      <input id="inputToDate" type="text" placeholder="todate" name="todate" />
+      <input id="inputAdults" type="text" placeholder="adults" name="adults" />
+      <input id="inputChildren" type="text" placeholder="children" name="children" />
+      <button id="btnSubmit" type="submit">Submit</button>
+    </form> -->
+
+
+    <form id="formMakeReservation" class="needs-validation" novalidate name="makereservation" method="post" action="/makereservation">
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="validationCustom01">First name</label>
+          <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="" name="firstname" required>
+          <div class="invalid-feedback">
+            Please specify your first name.
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationCustom02">Last name</label>
+          <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="" name="lastname" required>
+          <div class="invalid-feedback">
+            Please specify your last name.
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationCustomUsername">Email</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupPrepend">@</span>
+            </div>
+            <input type="text" class="form-control" id="validationCustomUsername" placeholder="Email" aria-describedby="inputGroupPrepend" 
+            name="email" required>
+            <div class="invalid-feedback">
+              Please provide your email address.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+          <label for="validationCustom03">From Date</label>
+          <input type="date" class="form-control" id="validationCustom03" placeholder="From Date" name="fromdate" required>
+          <div class="invalid-feedback">
+            Please provide a valid from date.
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="validationCustom04">To Date</label>
+          <input type="date" class="form-control" id="validationCustom04" placeholder="To Date" name="todate" required>
+          <div class="invalid-feedback">
+            Please provide a valid to date.
+          </div>
+        </div>
+      </div>      
+      <div class="form-group">
+        <div class="col-md-6 mb-3">
+          <label for="validationCustom05">Number of adults</label>
+          <input type="number" min="1" max="10" class="form-control" id="validationCustom01" placeholder="Adults" value="" name="adults" required>
+            <small id="adultHelpBlock" class="form-text text-muted">
+              Maximum number of adults per booking can be 10. For a group bigger than 10, please contact us through email.
+            </small>  
+            <div class="invalid-feedback">
+              Please specify the number of adults.
+            </div>            
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="validationCustom05">Number of children</label>
+          <input type="number" min="0" max="10" class="form-control" id="validationCustom01" placeholder="Children" value="" name="children" required>
+          <small id="adultHelpBlock" class="form-text text-muted">
+            Maximum number of children per booking can be 10. For a group bigger than 10, please contact us through email.
+          </small>  
+            <div class="invalid-feedback">
+              Please specify the number of children.
+            </div>
+        </div>
+      </div>
+      <button id="btnSubmit" class="btn btn-primary" type="submit">Submit form</button>
+    </form>
+    
+    <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+    </script>
+<%- include('_footer') %>
