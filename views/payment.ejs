@@ -1,0 +1,92 @@
+<%- include('_header') %>
+
+    <form id="formMakePayment" class="needs-validation lightbluebg" novalidate name="makepayment" method="post" action="/makepayment">
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+            <label for="validationCustom01">Card Number</label>
+            <input type="number" class="form-control" id="validationCustom01" placeholder="Card Number" value="" name="cardno" required>
+            <div class="invalid-feedback">
+                Please specify the card number.
+            </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <label for="validationCustom02">Name on card</label>
+                <input type="text" class="form-control" id="validationCustom02" placeholder="Name on card" value="" name="name" required>
+                <div class="invalid-feedback">
+                  Please specify the name on card.
+                </div>
+              </div> 
+        </div>   
+        <div class="form-row">
+            <div class="col-md-3 mb-3">
+                <label for="validationCustom01">Expiry Date</label>
+                <input type="date" class="form-control" id="validationCustom01" placeholder="Expiry Date" value="" name="expiry" required>
+                <div class="invalid-feedback">
+                    Please specify the expiry date.
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="validationCustom01">CVV</label>
+                <input type="number" max="999" class="form-control" id="validationCustom01" placeholder="CVV" value="" name="cvv" required>
+                <div class="invalid-feedback">
+                    Please specify the CVV.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <label for="validationCustom01">Billing Address</label>
+                <input type="text" class="form-control" id="validationCustom01" placeholder="Billing Address" value="" name="address" required>
+                <div class="invalid-feedback">
+                    Please specify the billing address.
+                </div>
+            </div>
+        </div>
+    
+        <div class="form-row">            
+            <div class="col-md-6 mb-3">
+                <label for="validationCustom01">City</label>
+                <input type="text" class="form-control" id="validationCustom01" placeholder="City" value="" name="city" required>
+                <div class="invalid-feedback">
+                    Please specify the City.
+                </div>
+            </div>
+        </div>
+      <div class="form-row">
+        <div class="col-md-8 mb-3">
+          <small id="adultHelpBlock" class="form-text text-muted">
+            All bookings are subject to discretion by BlueRoof hotels and inns. In case of any issues regarding refunds, cancellation or bulk bookings, please get in touch with us via <a href="mailto:blueroofadmin@jacksonhotelgroup.com">email</a>.
+          </small>
+        </div>
+        <div class="col-md-4 mb-3 text-right">
+          <button id="btnSubmit" class="btn btn-primary btn-info" type="submit" style="width:200px;">MAKE PAYMENT</button>
+        </div>
+      </div> 
+    </form>
+    <br/>
+    <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+    </script>
+
+<%- include('_footer') %>

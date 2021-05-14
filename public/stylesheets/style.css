@@ -7,6 +7,31 @@ body {
   width:300px; 
 }
 
+.roomThumbnail{
+  width:300px;
+  padding: 10px;
+}
+
 .white{
   text-decoration-color: white;
+}
+
+.lightbluebg{
+  background-color:rgb(207, 222, 228);
+  padding: 15px;
+}
+
+.bluerow{
+  border-style:solid ;
+  border-color:lightblue;
+  padding:10px;
+}
+
+.tealtext{
+  color:rgb(1, 95, 95);
+}
+
+.midcol{
+  /* padding-left:20px !important; */
+  padding-top:10px !important;
 }

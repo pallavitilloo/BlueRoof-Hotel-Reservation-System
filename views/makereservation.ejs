@@ -1,18 +1,6 @@
 <%- include('_header') %>
 
-    <!-- <form id="formMakeReservation" name="makereservation" method="post" action="/makereservation">
-      <input id="inputFirstName" type="text" placeholder="firstname" name="firstname" />
-      <input id="inputLastName" type="text" placeholder="lastname" name="lastname" />
-      <input id="inputEmail" type="text" placeholder="email" name="email" />      
-      <input id="inputFromDate" type="text" placeholder="fromdate" name="fromdate" />
-      <input id="inputToDate" type="text" placeholder="todate" name="todate" />
-      <input id="inputAdults" type="text" placeholder="adults" name="adults" />
-      <input id="inputChildren" type="text" placeholder="children" name="children" />
-      <button id="btnSubmit" type="submit">Submit</button>
-    </form> -->
-
-
-    <form id="formMakeReservation" class="needs-validation" novalidate name="makereservation" method="post" action="/makereservation">
+    <form id="formMakeReservation" class="needs-validation lightbluebg" novalidate name="makereservation" method="post" action="/makereservation">
       <div class="form-row">
         <div class="col-md-4 mb-3">
           <label for="validationCustom01">First name</label>
@@ -27,7 +15,7 @@
           <div class="invalid-feedback">
             Please specify your last name.
           </div>
-        </div>
+        </div>   
         <div class="col-md-4 mb-3">
           <label for="validationCustomUsername">Email</label>
           <div class="input-group">
@@ -50,44 +38,244 @@
             Please provide a valid from date.
           </div>
         </div>
-        <div class="col-md-3 mb-3">
+        <div class="col-md-6 mb-3">
           <label for="validationCustom04">To Date</label>
           <input type="date" class="form-control" id="validationCustom04" placeholder="To Date" name="todate" required>
           <div class="invalid-feedback">
             Please provide a valid to date.
           </div>
         </div>
-      </div>      
-      <div class="form-group">
+      </div>  
+      <div class="form-row">
         <div class="col-md-6 mb-3">
           <label for="validationCustom05">Number of adults</label>
           <input type="number" min="1" max="10" class="form-control" id="validationCustom01" placeholder="Adults" value="" name="adults" required>
-            <small id="adultHelpBlock" class="form-text text-muted">
-              Maximum number of adults per booking can be 10. For a group bigger than 10, please contact us through email.
-            </small>  
             <div class="invalid-feedback">
-              Please specify the number of adults.
+              Please provide a valid value (1-10).
             </div>            
         </div>
-        <div class="col-md-3 mb-3">
+        <div class="col-md-6 mb-3">
           <label for="validationCustom05">Number of children</label>
           <input type="number" min="0" max="10" class="form-control" id="validationCustom01" placeholder="Children" value="" name="children" required>
-          <small id="adultHelpBlock" class="form-text text-muted">
-            Maximum number of children per booking can be 10. For a group bigger than 10, please contact us through email.
-          </small>  
             <div class="invalid-feedback">
-              Please specify the number of children.
+              Please provide a valid value (0-10).
             </div>
+        </div>        
+      </div>
+      <div class="form-row">
+        <div class="col-md-8 mb-3">
+          <small id="adultHelpBlock" class="form-text text-muted">
+            Maximum number of adults/children per booking can be 10. For a group bigger than 10, please contact us through <a href="mailto:blueroofadmin@jacksonhotelgroup.com">email</a>.
+          </small>
+        </div>
+        <div class="col-md-4 mb-3 text-right">
+          <!-- <button id="btnFindRoom" class="btn btn-primary btn-info" type="button" style="width:200px;">FIND A ROOM</button> -->
+        </div>
+      </div> 
+      <div id="roomDesc">
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <img class="roomThumbnail" src="../images/room1.jpg" alt="Economy Room">
+          </div>
+          <div class="col-md-4 mb-3 midcol">          
+            <div class="row">
+              <div class="col-1">
+                <i class="fas fa-tv fa-lg tealtext" name="TV"></i>
+              </div>
+              <div class="col-1">
+                <i class="fas fa-wifi fa-lg tealtext" name="Free Wifi"></i>
+              </div>
+              <div class="col-1">
+                <i class="fas fa-baby fa-lg tealtext" name="Family-friendly"></i>
+              </div>
+              <div class="col-1">
+                <i class="fas fa-smoking-ban fa-lg tealtext" name="Smoke-free"></i>
+              </div>
+            </div> 
+            <br/>
+            <div class="row">
+              <div class="col-6">
+                <h5>Economy Rooms</h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col text-justify">
+                <p>Stay @ the cheapest rates available anywhere across NJ! The economy room is the best option for the on-the-go travelers.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3 text-center">          
+            <div class="row">
+              <div class="col">
+                <br/>
+                <h3>$79.00</h3>
+                <h5>USD/night</h5>
+                <br/>
+                <button id="btnSubmit" class="btn btn-primary btn-info" type="submit" style="width:200px;">BOOK NOW</button>
+              </div>
+            </div>        
+          </div>
+          
+        </div>
+        <hr/> 
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <img class="roomThumbnail" src="../images/room2.jpg" alt="Economy Room">
+          </div>
+          <div class="col-md-4 mb-3 midcol">          
+            <div class="row">
+              <div class="col-1">
+                <i class="fas fa-tv fa-lg tealtext"></i>
+              </div>
+              <div class="col-1">
+                <i class="fas fa-wifi fa-lg tealtext"></i>
+              </div>
+              <div class="col-1">
+                <i class="fas fa-baby fa-lg tealtext"></i>
+              </div>
+              <div class="col-1">
+                <i class="fas fa-soap fa-lg tealtext"></i>
+              </div>            
+              <div class="col-1">
+                <i class="fas fa-smoking-ban fa-lg tealtext"></i>
+              </div>
+            </div> 
+            <br/>
+            <div class="row">
+              <div class="col-6">
+                <h6>Double Deluxe Rooms</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col text-justify">
+                <p>Best suited for a family of four, the Double Deluxe rooms provide an economic option for a full family!</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3 text-center">          
+            <div class="row">
+              <div class="col">
+                <br/>
+                <h3>$99.00</h3>
+                <h5>USD/night</h5>
+                <br/>
+                <button id="btnSubmit" class="btn btn-primary btn-info" type="submit" style="width:200px;">BOOK NOW</button>
+              </div>
+            </div>        
+          </div>
+          
+        </div>
+        <hr/> 
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <img class="roomThumbnail" src="../images/room3.jpg" alt="Economy Room">
+          </div>
+          <div class="col-md-4 mb-3 midcol">          
+            <div class="row">
+              <div class="col-1">
+                <i class="fas fa-tv fa-lg tealtext"></i>
+              </div>
+              <div class="col-1">
+                <i class="fas fa-wifi fa-lg tealtext"></i>
+              </div>
+              <div class="col-1">
+                <i class="fas fa-paw fa-lg tealtext"></i>
+              </div>
+              <div class="col-1">
+                <i class="fas fa-baby fa-lg tealtext"></i>
+              </div>
+              <div class="col-1">
+                <i class="fas fa-soap fa-lg tealtext"></i>
+              </div> 
+            </div> 
+            <br/>
+            <div class="row">
+              <div class="col-6">
+                <h6>Family Suites</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <p>Give yourself some luxury in the luxury rooms!</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3 text-center">          
+            <div class="row">
+              <div class="col">
+                <br/>
+                <h3>$129.00</h3>
+                <h5>USD/night</h5>
+                <br/>
+                <button id="btnSubmit" class="btn btn-primary btn-info" type="submit" style="width:200px;">BOOK NOW</button>
+              </div>
+            </div>        
+          </div>
+          
+        </div>
+        <hr/> 
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <img class="roomThumbnail" src="../images/room4.jpg" alt="Economy Room">
+          </div>
+          <div class="col-md-4 mb-3 midcol">          
+            <div class="row">
+              <div class="col-1">
+                <i class="fas fa-tv fa-lg tealtext"></i>
+              </div>
+              <div class="col-1">
+                <i class="fas fa-wifi fa-lg tealtext"></i>
+              </div>
+              <div class="col-1">
+                <i class="fas fa-paw fa-lg tealtext"></i>
+              </div>
+              <div class="col-1">
+                <i class="fas fa-baby fa-lg tealtext"></i>
+              </div>
+              <div class="col-1">
+                <i class="fas fa-soap fa-lg tealtext"></i>
+              </div>
+              <div class="col-1">
+                <i class="fas fa-cloud-sun tealtext"></i>
+              </div>
+              <div class="col-1">
+                <i class="fas fa-dumbbell fa-lg tealtext"></i>
+              </div>
+            </div> 
+            <br/>
+            <div class="row">
+              <div class="col-6">
+                <h6>Luxury Suites</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col text-justify">
+                <p>The best available suites @ BlueRoof! Come in for a relaxing trip, or just to unwind, or even for a serene and romantic honeymoon!</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3 text-center">          
+            <div class="row">
+              <div class="col">
+                <br/>
+                <h3>$179.00</h3>
+                <h5>USD/night</h5>
+                <br/>
+                <button id="btnSubmit" class="btn btn-primary btn-info" type="submit" style="width:200px;">BOOK NOW</button>
+              </div>
+            </div>        
+          </div>
+          
         </div>
       </div>
-      <button id="btnSubmit" class="btn btn-primary" type="submit">Submit form</button>
     </form>
-    
+    <br/>
     <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields
     (function() {
       'use strict';
       window.addEventListener('load', function() {
+        
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         var forms = document.getElementsByClassName('needs-validation');
         // Loop over them and prevent submission
@@ -103,4 +291,7 @@
       }, false);
     })();
     </script>
+
+<!-- <%- include('_homecontent') %> -->
+
 <%- include('_footer') %>

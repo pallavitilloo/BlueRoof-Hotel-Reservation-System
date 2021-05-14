@@ -1,0 +1,18 @@
+<%- include('_header') %>
+
+    <br/>   
+    <h2>User Reviews</h2>
+    <br/>
+    <div class="container lightbluebg">
+      <%
+        var list = '';
+        for (i = 0; i < itemlist.length; i++) {
+          list += '<div class="row"><div class="col"><strong>"' + itemlist[i].feedback +'"</strong></div></div><br/>';
+          list += '<div class="row"><div class="col text-right">' + itemlist[i].username + '</div></div><hr/>';
+        }
+      %>
+      <%- list %>
+      </div>
+
+
+<%- include('_footer') %>
